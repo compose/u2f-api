@@ -11,10 +11,6 @@
 'use strict';
 
 (function (){
-  if ('u2f' in window || !('chrome' in window)) {
-    return;
-  }
-
   /** Namespace for the U2F api.
    * @type {Object}
    */
@@ -234,7 +230,7 @@
    * @private
    */
   u2f.isIosChrome_ = function() {
-    return $.inArray(navigator.platform, ["iPhone", "iPad", "iPod"]) > -1;
+    return ["iPhone", "iPad", "iPod"].indexOf(navigator.platform) > -1;
   };
 
   /**
